@@ -1,0 +1,90 @@
+:root {
+    --text-color: #2d2d2d;
+    --neutral-color: #dedede;
+    --dark-color: rgb(3, 42, 60);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    background-color: var(--neutral-color);
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    line-height: 1.1;
+    margin: 1rem;
+    text-align: center;
+}
+
+.box {
+    background-color: #fff;
+    width: 90%;
+    border: solid 1px #666;
+    margin: auto;
+    padding: 1rem 1rem 3rem;
+    position: relative
+}
+
+.special, .special2 {
+    color: #fff;
+    font-weight: bold;
+    font-style: italic;
+    padding: 4px;
+
+}
+
+.special {
+    --f: 20px;
+    --be: 10px;
+    --to: 15px;
+    background-color: #5c0b45;
+    position: absolute;
+    inset: var(--to) calc(-1 * var(--f)) auto auto;
+    padding: 0 10px var(--f) calc(10px + var(--be));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--f)), calc(100% - var(--f)) 100%, calc(100% - var(--f)) calc(100% - var(--f)), 0 calc(100% - var(--f)), var(--be) calc(50% - var(--f)/2));
+    box-shadow: 0 calc(-1 * var(--f)) 0 inset rgba(0,0,0,.5);
+}
+
+.special2 {
+    background-color: #1d91b7;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    margin: 0 0 0 -20px;
+    padding: 0 20px;
+    width: 105%;
+}
+
+.special2::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    bottom: -14px;
+    border-right: 20px solid #0b4051;
+    border-top: 15px solid rgba(0,0,0,0);
+    border-bottom: 15px solid rgba(0,0,0,0);
+}
+
+.special2::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -14px;
+    z-index: -1;
+    border-left: 20px solid #0b4051;
+    border-top: 15px solid rgba(0,0,0,0);
+    border-bottom: 15px solid rgba(0,0,0,0);
+}
